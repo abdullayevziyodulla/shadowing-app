@@ -1,38 +1,126 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1,
+h2,
+h3 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main content area */
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Video section */
+.video-section {
+  flex: 3;
+  min-width: 600px;
+  margin-right: 20px;
+}
+
+/* Controls and transcript section */
+.controls-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Video player */
+.video-player {
+  width: 100%;
+  height: 500px;
+}
+
+/* Video settings below the video */
+.video-settings {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-settings .setting {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 1;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.video-settings .setting:last-child {
+  margin-right: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input,
+textarea,
+select {
+  margin: 5px 0;
+  padding: 8px;
+  width: 100%;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.transcript-word {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.transcript-word:hover {
+  background-color: #e0e0e0;
+}
+
+.audio-controls {
+  margin-top: 10px;
+}
+
+.video-container,
+.transcript-container,
+.vocabulary-container,
+.recorder-container {
+  margin-top: 30px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  resize: vertical;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .video-section {
+    flex: 1;
+    min-width: 100%;
+    margin-right: 0;
+  }
+
+  .controls-section {
+    flex: 1;
+    min-width: 100%;
+  }
+
+  .video-player {
+    height: auto;
   }
 }
